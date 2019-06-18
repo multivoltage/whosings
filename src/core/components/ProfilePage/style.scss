@@ -1,0 +1,16 @@
+@import '../../../vars.scss';
+
+.profilePage {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+
+  .value-name {
+    display: none;
+  }
+
+  &--title {
+    color: $primary;
+  }
+}

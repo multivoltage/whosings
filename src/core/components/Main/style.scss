@@ -1,0 +1,37 @@
+@import "../../../vars.scss";
+
+SECTION.main {
+
+  a {
+    color: $primary;
+    text-decoration-color: $primary;
+  }
+
+  .title {
+    color: $primary;
+    text-align: center;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .action {
+    margin: 1em;
+    flex: 1 1 0;
+    text-align: center;
+  }
+
+  // MOBILE
+  @media only screen and (max-device-width: 700px){
+
+    .actions {
+      flex-wrap: wrap;
+    }
+    .action {
+      flex-basis: 100%;
+    }
+  }
+}

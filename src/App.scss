@@ -1,0 +1,108 @@
+@import './vars.scss';
+
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+// used in /stats and /profie
+
+.gamesList {
+  border: 1px solid $primary;
+}
+
+.gameRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:first-child {
+    background: $primary;
+    color: white;
+  }
+
+  &:not(:first-child):not(:last-child) {
+    border-bottom: 1px solid $primary;
+  }
+
+  .value {
+    text-align: center;
+    margin: 1em;
+    flex-basis: 25%;
+  }
+}
+
+SECTION.main,
+.quizPage,
+.statsPage,
+.profilePage,
+.quizPage--content {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 4em;
+  overflow-y: scroll;
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+  justify-content: flex-start;
+
+  &::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+  }
+}
+
+.quizPage--content {
+  padding-top: 0;
+  margin-top: 2em;
+  height: auto;
+}
+
+// reset button style
+BUTTON {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  text-align: inherit;
+  background: transparent;
+  outline: none;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+
+  &[disabled] {
+    opacity: .6;
+  }
+}
+
+
+@media only screen and (max-device-width: 700px){
+  .quizPage--content {
+    margin-top: 0;
+  }
+}

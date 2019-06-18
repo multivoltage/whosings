@@ -1,0 +1,12 @@
+@import '../../../vars.scss';
+
+.statsPage {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  align-items: center;
+
+  &--title {
+    color: $primary;
+  }
+}
