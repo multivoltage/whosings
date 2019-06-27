@@ -1,14 +1,39 @@
 const express = require('express')
 const cors = require('cors')
 const path = require('path')
+const getTrackLyric = require('./server/mm').getTrackLyric
+const topSongList = require('./server/mm').topSongList
+const buildSchema = require('./server/mm').buildSchema
 
 // Create the server
 const app = express()
 
 // Serve our base route that returns a Hello World cow
-app.get('/api/cow/', cors(), async (req, res, next) => {
+app.get('/api/mm/songs', cors(), async (req, res, next) => {
+  const r = await topSongList()
   try {
-    res.json({ text: 'hello world' })
+    res.json(r)
+  } catch (err) {
+    next(err)
+  }
+})
+
+/** get liryc */
+app.get('/api/mm/lyric/:id', cors(), async (req, res, next) => {
+  const id = req.params.id
+  const r = await getTrackLyric(id)
+  try {
+    res.json(r)
+  } catch (err) {
+    next(err)
+  }
+})
+
+/** get initial schema */
+app.get('/api/mm/schema', cors(), async (req, res, next) => {
+  const r = await buildSchema()
+  try {
+    res.json(r)
   } catch (err) {
     next(err)
   }

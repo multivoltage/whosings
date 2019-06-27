@@ -22,7 +22,7 @@ class App extends Component {
             <HeaderWrapper />
             <LoginLayerWrapper />
             <Switch>
-              <Route exact path="/" component={Main} />
+              {/* <Route exact path="/" component={Main} /> */}
               <Route exact path="/quiz" component={QuizPageWrapper} />
               <Route exact path="/profile" component={ProfilePageWrapper} />
               <Route exact path="/stats" component={StatsPageWrapper} />
