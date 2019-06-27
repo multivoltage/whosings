@@ -1,12 +1,10 @@
-### PLEASE ENABLE CORS-ORIGIN (I USE CHROME EXTENSION) TO GET A WORKING APP :)
-
-### demo: https://multivoltage.github.io/WhoSings
+### demo: https://whosings.herokuapp.com/#/profile
 
 ### English description
 
 Goal:
 build a react game where people have to guess correct artist from a choice of three, based on lyrics
-  
+
 Feature list:
 
 - question in a single row and 3 artist to choose from
