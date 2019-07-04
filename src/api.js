@@ -1,6 +1,6 @@
 // import 'cross-fetch/polyfill'
 import queryString from 'query-string'
-const HOST_ROOT = process.env.HOST_ROOT || 'http://localhost:5000/api/mm/'
+const HOST_ROOT = process.env.REACT_APP_HOST_ROOT || 'http://localhost:5000/api/mm/'
 const TOP_SONG_LIST = 'songs'
 const LYRICS = 'lyric'
 const SCHEMA = 'schema'
