@@ -39,6 +39,18 @@ app.get('/api/mm/schema', cors(), async (req, res, next) => {
   }
 })
 
+/** info **/
+app.get('/api/info', cors(), async (req, res, next) => {
+  const host = req.get('host')
+  const origin = req.get('origin')
+
+  try {
+    res.json({ host, origin })
+  } catch (err) {
+    next(err)
+  }
+})
+
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, 'build')))
 // Anything that doesn't match the above, send back index.html
