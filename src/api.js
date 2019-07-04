@@ -1,6 +1,6 @@
 // import 'cross-fetch/polyfill'
 import queryString from 'query-string'
-const HOST_ROOT = process.env.REACT_APP_HOST_ROOT || 'http://localhost:5000/api/mm/'
+const HOST_ROOT = process.env.REACT_APP_HOST_ROOT || 'http://localhost:5000'
 const TOP_SONG_LIST = 'songs'
 const LYRICS = 'lyric'
 const SCHEMA = 'schema'
@@ -9,7 +9,8 @@ export const DEFAULT_TIME_FOR_TRACK = 4000 // + 1000 * 60 * 3;
 const concatParams = paramsObj => queryString.stringify(paramsObj)
 
 const request = async (ENDPOINT, paramsObj) => {
-  const res = await fetch(HOST_ROOT + '/' + ENDPOINT + '?' + concatParams(paramsObj), {
+  const url = HOST_ROOT + '/api/mm/' + SCHEMA + '?' + concatParams(paramsObj)
+  const res = await fetch(url, {
     method: 'GET',
   })
   const r = await res.json()
